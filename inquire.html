@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inquire — Sam, NYC Photographer</title>
+  <meta name="description" content="Inquire about elopement, couples, and lifestyle photography sessions in New York City and beyond. Tell me your story.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Karla:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header site-header--solid">
+    <a class="wordmark" href="index.html">sam <span>new york city</span></a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav class="nav" id="nav">
+      <a href="index.html">Home</a>
+      <a href="elopements.html">Stories</a>
+      <a href="work-with-me.html">Work With Me</a>
+      <a href="inquire.html" aria-current="page">Inquire</a>
+    </nav>
+  </header>
+
+  <section class="wrap page-head">
+    <p class="label">inquire</p>
+    <h1 class="display">tell me your story.</h1>
+    <p class="quiet">Who you are, what you're planning, what matters most to you. There are no wrong answers — I read every word.</p>
+  </section>
+
+  <section class="wrap section" style="padding-top:2rem;">
+    <div class="form-wrap">
+
+      <!-- ================== TEMPORARY NOTICE ==================
+           The form below is intentionally disabled while the site
+           is under construction. When you're ready to switch it on:
+           1. Sign up at formspree.io (free) and get your form ID
+           2. Add: action="https://formspree.io/f/YOUR_ID" method="POST" to the <form> tag
+           3. Remove class "is-disabled" from the <form> tag
+           4. Remove the "disabled" attributes from the inputs and button
+           5. Delete this notice block
+           ======================================================= -->
+      <div class="notice">
+        <p class="label" style="margin-bottom:0.5rem;">a quick note</p>
+        <p>The inquiry form is still under construction. For now, write to me directly at
+          <!-- EDIT: replace with your real email address (appears twice on this line) -->
+          <a href="mailto:sam@example.com">sam@example.com</a>
+          — tell me your names, your date if you have one, and what you're dreaming up. I reply within two days.</p>
+      </div>
+
+      <!-- Form is shown so visitors can see what's coming, but it can't be submitted yet. -->
+      <form class="form is-disabled" aria-disabled="true">
+        <div class="field">
+          <label class="label" for="name">your name(s)</label>
+          <input type="text" id="name" name="name" disabled>
+        </div>
+        <div class="field">
+          <label class="label" for="email">email</label>
+          <input type="email" id="email" name="email" disabled>
+        </div>
+        <div class="field">
+          <label class="label" for="type">session type</label>
+          <select id="type" name="session-type" disabled>
+            <option>elopement</option>
+            <option>couples</option>
+            <option>lifestyle</option>
+            <option>something else</option>
+          </select>
+        </div>
+        <div class="field">
+          <label class="label" for="date">your date, if you have one</label>
+          <input type="text" id="date" name="date" disabled>
+        </div>
+        <div class="field">
+          <label class="label" for="story">tell me your story</label>
+          <textarea id="story" name="story" disabled></textarea>
+        </div>
+        <div>
+          <button class="btn" type="submit" disabled>Coming soon</button>
+        </div>
+      </form>
+
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="label">sam — nyc elopement, couples &amp; lifestyle photographer</p>
+      <!-- EDIT: replace with your real email address -->
+      <p class="label"><a href="mailto:sam@example.com">sam@example.com</a></p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
