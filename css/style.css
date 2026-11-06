@@ -359,3 +359,4 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 /* inquiry form status */
 .form-status { font-size: 0.9rem; color: var(--stone); min-height: 1.2em; margin: 0; }
 .form-thanks { margin-top: 2.5rem; }
+[hidden] { display: none !important; }
