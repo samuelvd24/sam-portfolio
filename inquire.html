@@ -33,36 +33,23 @@
   <section class="wrap section" style="padding-top:2rem;">
     <div class="form-wrap">
 
-      <!-- ================== TEMPORARY NOTICE ==================
-           The form below is intentionally disabled while the site
-           is under construction. When you're ready to switch it on:
-           1. Sign up at formspree.io (free) and get your form ID
-           2. Add: action="https://formspree.io/f/YOUR_ID" method="POST" to the <form> tag
-           3. Remove class "is-disabled" from the <form> tag
-           4. Remove the "disabled" attributes from the inputs and button
-           5. Delete this notice block
-           ======================================================= -->
-      <div class="notice">
-        <p class="label" style="margin-bottom:0.5rem;">a quick note</p>
-        <p>The inquiry form is still under construction. For now, write to me directly at
-          <!-- EDIT: replace with your real email address (appears twice on this line) -->
-          <a href="mailto:samuelvalentinodewangga@gmail.com">samuelvalentinodewangga@gmail.com</a>
-          — tell me your names, your date if you have one, and what you're dreaming up. I reply within two days.</p>
-      </div>
-
-      <!-- Form is shown so visitors can see what's coming, but it can't be submitted yet. -->
-      <form class="form is-disabled" aria-disabled="true">
+      <!-- Inquiry form — submissions go to Formspree, which emails them to Sam.
+           To change where emails go, edit the form in your formspree.io dashboard. -->
+      <form class="form" id="inquiry-form" action="https://formspree.io/f/xvkknpor" method="POST">
+        <input type="hidden" name="_subject" value="New inquiry from your portfolio">
+        <!-- spam trap: hidden from people, bots fill it in -->
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
         <div class="field">
           <label class="label" for="name">your name(s)</label>
-          <input type="text" id="name" name="name" disabled>
+          <input type="text" id="name" name="name" autocomplete="name" required>
         </div>
         <div class="field">
           <label class="label" for="email">email</label>
-          <input type="email" id="email" name="email" disabled>
+          <input type="email" id="email" name="email" autocomplete="email" required>
         </div>
         <div class="field">
           <label class="label" for="type">session type</label>
-          <select id="type" name="session-type" disabled>
+          <select id="type" name="session-type">
             <option>elopement</option>
             <option>couples</option>
             <option>lifestyle</option>
@@ -71,16 +58,23 @@
         </div>
         <div class="field">
           <label class="label" for="date">your date, if you have one</label>
-          <input type="text" id="date" name="date" disabled>
+          <input type="text" id="date" name="date">
         </div>
         <div class="field">
           <label class="label" for="story">tell me your story</label>
-          <textarea id="story" name="story" disabled></textarea>
+          <textarea id="story" name="story" required></textarea>
         </div>
         <div>
-          <button class="btn" type="submit" disabled>Coming soon</button>
+          <button class="btn" type="submit">Send</button>
         </div>
+        <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
       </form>
+
+      <!-- Shown in place of the form after a successful send -->
+      <div class="notice form-thanks" id="form-thanks" hidden>
+        <p class="label" style="margin-bottom:0.5rem;">thank you</p>
+        <p>Your story is on its way to me. I read every one, and I'll write back within two days.</p>
+      </div>
 
     </div>
   </section>

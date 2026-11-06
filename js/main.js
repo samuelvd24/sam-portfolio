@@ -36,3 +36,34 @@ if (!reduced && "IntersectionObserver" in window) {
 } else {
   revealEls.forEach((el) => el.classList.add("is-visible"));
 }
+
+/* ---------- inquiry form (Formspree) ---------- */
+(function () {
+  var form = document.getElementById('inquiry-form');
+  if (!form) return;
+  var status = document.getElementById('form-status');
+  var thanks = document.getElementById('form-thanks');
+  var btn = form.querySelector('button[type="submit"]');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+    status.textContent = '';
+
+    fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { Accept: 'application/json' }
+    }).then(function (res) {
+      if (!res.ok) throw new Error('send failed');
+      form.hidden = true;
+      thanks.hidden = false;
+      thanks.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }).catch(function () {
+      status.textContent = 'Something went wrong — please try again, or email me at samuelvalentinodewangga@gmail.com.';
+      btn.disabled = false;
+      btn.textContent = 'Send';
+    });
+  });
+})();
